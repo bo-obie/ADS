@@ -1,0 +1,23 @@
+use admin
+switched to db admin
+db.posts.insertMany([
+  { username: "Amit", title: "Sports Update", body: "Cricket World Cup news", likes: 15, views: 200 },
+  { username: "BVC", title: "Tech Trends", body: "Latest AI developments", likes: 25, views: 300 },
+  { username: "Neha", title: "Travel Blog", body: "Exploring Goa beaches", likes: 10, views: 150 },
+  { username: "Ravi", title: "Cricket Fever", body: "Cricket is loved in India", likes: 40, views: 500 },
+  { username: "Priya", title: "Foodie", body: "Best street food in Delhi", likes: 20, views: 250 },
+  { username: "Ashish", title: "Cricket Analysis", body: "Cricket match highlights", likes: 35, views: 400 },
+  { username: "Shreyas", title: "Movies", body: "Top Bollywood releases", likes: 18, views: 220 },
+  { username: "BVC", title: "Gaming", body: "New PS5 games", likes: 12, views: 180 },
+  { username: "Neha", title: "Lifestyle", body: "Yoga for beginners", likes: 22, views: 270 },
+  { username: "Ravi", title: "Cricket Legends", body: "Sachin Tendulkar career stats", likes: 50, views: 600 }
+]);
+
+
+db.posts.find({ body: /Cricket/ });
+
+
+db.posts.deleteMany({ username: "BVC" });
+
+
+db.posts.updateMany({}, { $set: { likes: 0 } });
