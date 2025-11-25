@@ -1,0 +1,45 @@
+CREATE TABLE Emp (
+    Emp_no NUMBER PRIMARY KEY,
+    Emp_name VARCHAR2(100),
+    Dept_no NUMBER,
+    Dept_name VARCHAR2(50),
+    Job_Id VARCHAR2(50),
+    Salary NUMBER(10,2),
+    Hiredate DATE
+);
+
+
+INSERT INTO Emp VALUES (1, 'Ashish', 101, 'Sales', 'S01', 40000, TO_DATE('2018-01-19','YYYY-MM-DD'));
+INSERT INTO Emp VALUES (2, 'Shreyas', 101, 'Sales', 'S02', 42000, TO_DATE('2019-03-25','YYYY-MM-DD'));
+INSERT INTO Emp VALUES (3, 'Priya', 102, 'Production', 'P01', 38000, TO_DATE('2020-07-10','YYYY-MM-DD'));
+INSERT INTO Emp VALUES (4, 'Ravi', 102, 'Production', 'P02', 45000, TO_DATE('2021-11-05','YYYY-MM-DD'));
+INSERT INTO Emp VALUES (5, 'Neha', 103, 'IT', 'IT01', 50000, TO_DATE('2022-02-18','YYYY-MM-DD'));
+INSERT INTO Emp VALUES (6, 'Amit', 104, 'HR', 'H01', 30000, TO_DATE('2020-05-12','YYYY-MM-DD'));
+INSERT INTO Emp VALUES (7, 'Sneha', 101, 'Sales', 'S03', 9500, TO_DATE('2021-09-01','YYYY-MM-DD'));
+INSERT INTO Emp VALUES (8, 'Karan', 102, 'Production', 'P03', 60000, TO_DATE('2019-12-15','YYYY-MM-DD'));
+INSERT INTO Emp VALUES (9, 'Meera', 103, 'IT', 'IT02', 32000, TO_DATE('2022-08-20','YYYY-MM-DD'));
+INSERT INTO Emp VALUES (10, 'Vikas', 104, 'HR', 'H02', 28000, TO_DATE('2023-01-10','YYYY-MM-DD'));
+
+
+SELECT * FROM Emp;
+
+
+SELECT * 
+FROM Emp
+WHERE Dept_name = 'Production' AND Salary > 40000;
+
+
+UPDATE Emp
+SET Salary = 30000
+WHERE Dept_name = 'Sales';
+
+
+DELETE FROM Emp
+WHERE Dept_name = 'Sales' AND Salary < 10000;
+
+
+SELECT * 
+FROM Emp
+WHERE Dept_name = 'Sales';
+
+
