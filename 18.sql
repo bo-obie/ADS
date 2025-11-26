@@ -1,6 +1,6 @@
 SHOW PDBS;
 ALTER SESSION SET CONTAINER = XEPDB1;
-
+--alter session set "_oracle_script"=true;   --for sqlplus
 
 CREATE USER jyoti IDENTIFIED BY mitpoly;
 -- Oracle typically requires also granting CREATE SESSION so user can log in:
@@ -36,5 +36,6 @@ CREATE ROLE emp_pvr;
 GRANT CREATE TABLE, CREATE VIEW TO emp_pvr;
 
 GRANT emp_pvr TO jyoti, john;
+
 
 
