@@ -1,0 +1,98 @@
+Microsoft Windows [Version 10.0.26200.7171]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\harsh>sqlplus
+
+SQL*Plus: Release 21.0.0.0.0 - Production on Wed Nov 26 07:54:38 2025
+Version 21.3.0.0.0
+
+Copyright (c) 1982, 2021, Oracle.  All rights reserved.
+
+Enter user-name: sys as dba
+SP2-0306: Invalid option.
+Usage: CONN[ECT] [{logon|/|proxy} [AS {SYSDBA|SYSOPER|SYSASM|SYSBACKUP|SYSDG|SYSKM|SYSRAC}] [edition=value]]
+where <logon> ::= <username>[/<password>][@<connect_identifier>]
+      <proxy> ::= <proxyuser>[<username>][/<password>][@<connect_identifier>]
+Enter user-name: sys as sysdba
+Enter password:
+
+Connected to:
+Oracle Database 21c Express Edition Release 21.0.0.0.0 - Production
+Version 21.3.0.0.0
+
+SQL> create user jyoti identified by mitpoly;
+create user jyoti identified by mitpoly
+            *
+ERROR at line 1:
+ORA-65096: invalid common user or role name
+
+
+SQL> create user john identified by doe;
+create user john identified by doe
+            *
+ERROR at line 1:
+ORA-65096: invalid common user or role name
+
+
+SQL> alter session set "_oracle_script"=teur;
+alter session set "_oracle_script"=teur
+                                   *
+ERROR at line 1:
+ORA-00922: missing or invalid option
+
+
+SQL> alter session set "_oracle_script"=true;
+
+Session altered.
+
+SQL> create user jyoti identified by mitpoly;
+create user jyoti identified by mitpoly
+            *
+ERROR at line 1:
+ORA-01920: user name 'JYOTI' conflicts with another user or role name
+
+
+SQL> create user john identified by doe;
+
+User created.
+
+SQL> Grant update, delete,create on emp to john;
+Grant update, delete,create on emp to john
+                               *
+ERROR at line 1:
+ORA-02224: EXECUTE privilege not allowed for tables
+
+
+SQL> Grant update, delete on emp to john;
+
+Grant succeeded.
+
+SQL> grant create table, create view to john;
+
+Grant succeeded.
+
+SQL> revoke create table from john;
+
+Revoke succeeded.
+
+SQL> GRANT CREATE SESSION TO jyoti;
+
+Grant succeeded.
+
+SQL> create role dept_pvr;
+
+Role created.
+
+SQL> grant select, insert, delete on emp to dept_pvr;
+
+Grant succeeded.
+
+SQL> grant dept_pvr to john;
+
+Grant succeeded.
+
+SQL> revoke dept_pvr from john;
+
+Revoke succeeded.
+
+SQL>
