@@ -1,6 +1,6 @@
 show pdbs;
 ALTER SESSION SET CONTAINER = XEPDB1;
-
+--alter session set "_oracle_script"=true;   --for sqlplus
 
 CREATE USER vaishnav IDENTIFIED BY johnpwd;
 GRANT CREATE SESSION TO vaishnav;
@@ -27,4 +27,5 @@ GRANT SELECT, INSERT, DELETE ON Emp TO dept_pvr1;
 GRANT SELECT, INSERT, DELETE ON Dept TO dept_pvr1;
 
 GRANT dept_pvr1 TO jyoti, john;
+
 
