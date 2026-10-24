@@ -1,0 +1,23 @@
+Subject:   Cloud Computing
+Experiment No: 3
+Title:  Hosting a Web Server on AWS EC2
+
+Aim:Install a web server (Apache or Nginx), and host a sample webpage accessible over the internet.
+Theory:
+Amazon EC2 provides resizable compute capacity in the cloud. Students will learn about instance types, key pairs
+Procedure:
+
+1.Log in to the AWS Management Console.
+
+2.Navigate to EC2 → Launch Instance.
+
+3.Select Ubuntu (Free Tier) AMI and a t2.micro instance type.
+
+4.Create/Select a Key Pair and Security Group (allow SSH/HTTP).
+
+5.Launch the instance.
+
+Connect via SSH
+ssh -i key.pem ubuntu@<public-ip>
+
+Conclusion:A running EC2 instance
